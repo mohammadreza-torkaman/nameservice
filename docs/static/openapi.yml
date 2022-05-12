@@ -48286,6 +48286,8 @@ definitions:
       method.
   mohammadrezatorkaman.nameservice.nameservice.MsgBuyNameResponse:
     type: object
+  mohammadrezatorkaman.nameservice.nameservice.MsgDeleteNameResponse:
+    type: object
   mohammadrezatorkaman.nameservice.nameservice.MsgSetNameValueResponse:
     type: object
   mohammadrezatorkaman.nameservice.nameservice.Params:
