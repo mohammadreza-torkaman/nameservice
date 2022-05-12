@@ -123,15 +123,113 @@ func (m *MsgBuyNameResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MsgBuyNameResponse proto.InternalMessageInfo
 
+type MsgSetNameValue struct {
+	Creator string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Name    string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Value   string `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
+}
+
+func (m *MsgSetNameValue) Reset()         { *m = MsgSetNameValue{} }
+func (m *MsgSetNameValue) String() string { return proto.CompactTextString(m) }
+func (*MsgSetNameValue) ProtoMessage()    {}
+func (*MsgSetNameValue) Descriptor() ([]byte, []int) {
+	return fileDescriptor_df4dec9b515ec245, []int{2}
+}
+func (m *MsgSetNameValue) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgSetNameValue) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgSetNameValue.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgSetNameValue) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgSetNameValue.Merge(m, src)
+}
+func (m *MsgSetNameValue) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgSetNameValue) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgSetNameValue.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgSetNameValue proto.InternalMessageInfo
+
+func (m *MsgSetNameValue) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgSetNameValue) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *MsgSetNameValue) GetValue() string {
+	if m != nil {
+		return m.Value
+	}
+	return ""
+}
+
+type MsgSetNameValueResponse struct {
+}
+
+func (m *MsgSetNameValueResponse) Reset()         { *m = MsgSetNameValueResponse{} }
+func (m *MsgSetNameValueResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgSetNameValueResponse) ProtoMessage()    {}
+func (*MsgSetNameValueResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_df4dec9b515ec245, []int{3}
+}
+func (m *MsgSetNameValueResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgSetNameValueResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgSetNameValueResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgSetNameValueResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgSetNameValueResponse.Merge(m, src)
+}
+func (m *MsgSetNameValueResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgSetNameValueResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgSetNameValueResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgSetNameValueResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*MsgBuyName)(nil), "mohammadrezatorkaman.nameservice.nameservice.MsgBuyName")
 	proto.RegisterType((*MsgBuyNameResponse)(nil), "mohammadrezatorkaman.nameservice.nameservice.MsgBuyNameResponse")
+	proto.RegisterType((*MsgSetNameValue)(nil), "mohammadrezatorkaman.nameservice.nameservice.MsgSetNameValue")
+	proto.RegisterType((*MsgSetNameValueResponse)(nil), "mohammadrezatorkaman.nameservice.nameservice.MsgSetNameValueResponse")
 }
 
 func init() { proto.RegisterFile("nameservice/tx.proto", fileDescriptor_df4dec9b515ec245) }
 
 var fileDescriptor_df4dec9b515ec245 = []byte{
-	// 235 bytes of a gzipped FileDescriptorProto
+	// 292 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0xc9, 0x4b, 0xcc, 0x4d,
 	0x2d, 0x4e, 0x2d, 0x2a, 0xcb, 0x4c, 0x4e, 0xd5, 0x2f, 0xa9, 0xd0, 0x2b, 0x28, 0xca, 0x2f, 0xc9,
 	0x17, 0xd2, 0xc9, 0xcd, 0xcf, 0x48, 0xcc, 0xcd, 0x4d, 0x4c, 0x29, 0x4a, 0xad, 0x4a, 0x2c, 0xc9,
@@ -140,13 +238,17 @@ var fileDescriptor_df4dec9b515ec245 = []byte{
 	0x05, 0xe9, 0x92, 0x60, 0x54, 0x60, 0xd4, 0xe0, 0x0c, 0x82, 0x71, 0x85, 0x84, 0xb8, 0x58, 0x40,
 	0xda, 0x24, 0x98, 0xc0, 0xc2, 0x60, 0xb6, 0x90, 0x00, 0x17, 0x73, 0x52, 0x66, 0x8a, 0x04, 0x33,
 	0x58, 0x08, 0xc4, 0x54, 0x12, 0xe1, 0x12, 0x42, 0x98, 0x16, 0x94, 0x5a, 0x5c, 0x90, 0x9f, 0x57,
-	0x9c, 0x6a, 0xd4, 0xcb, 0xc8, 0xc5, 0xec, 0x5b, 0x9c, 0x2e, 0xd4, 0xca, 0xc8, 0xc5, 0x0e, 0xb3,
-	0xc9, 0x42, 0x8f, 0x14, 0x67, 0xea, 0x21, 0x4c, 0x95, 0x72, 0x20, 0x57, 0x27, 0xcc, 0x3d, 0x4e,
-	0x51, 0x27, 0x1e, 0xc9, 0x31, 0x5e, 0x78, 0x24, 0xc7, 0xf8, 0xe0, 0x91, 0x1c, 0xe3, 0x84, 0xc7,
-	0x72, 0x0c, 0x17, 0x1e, 0xcb, 0x31, 0xdc, 0x78, 0x2c, 0xc7, 0x10, 0xe5, 0x90, 0x9e, 0x59, 0x92,
-	0x51, 0x9a, 0xa4, 0x97, 0x9c, 0x9f, 0xab, 0x8f, 0x6c, 0x8b, 0x2e, 0xcc, 0x1a, 0x7d, 0xe4, 0x20,
-	0xaf, 0x40, 0xe1, 0x95, 0x54, 0x16, 0xa4, 0x16, 0x27, 0xb1, 0x81, 0x23, 0xc1, 0x18, 0x10, 0x00,
-	0x00, 0xff, 0xff, 0xbd, 0xbc, 0x23, 0xc5, 0x9c, 0x01, 0x00, 0x00,
+	0x9c, 0xaa, 0x14, 0xca, 0xc5, 0xef, 0x5b, 0x9c, 0x1e, 0x9c, 0x5a, 0x02, 0x12, 0x0d, 0x4b, 0xcc,
+	0x29, 0x25, 0xd5, 0x22, 0x11, 0x2e, 0xd6, 0x32, 0x90, 0x36, 0xa8, 0x55, 0x10, 0x8e, 0x92, 0x24,
+	0x97, 0x38, 0x9a, 0xb1, 0x30, 0x1b, 0x8d, 0x96, 0x30, 0x71, 0x31, 0xfb, 0x16, 0xa7, 0x0b, 0xb5,
+	0x32, 0x72, 0xb1, 0xc3, 0xfc, 0x66, 0xa1, 0x47, 0x4a, 0xc0, 0xe8, 0x21, 0xfc, 0x21, 0xe5, 0x40,
+	0xae, 0x4e, 0x98, 0x7b, 0x84, 0xa6, 0x30, 0x72, 0xf1, 0xa0, 0xf8, 0xdf, 0x96, 0x64, 0x23, 0x91,
+	0xb5, 0x4b, 0xb9, 0x52, 0xa4, 0x1d, 0xe6, 0x2c, 0xa7, 0xa8, 0x13, 0x8f, 0xe4, 0x18, 0x2f, 0x3c,
+	0x92, 0x63, 0x7c, 0xf0, 0x48, 0x8e, 0x71, 0xc2, 0x63, 0x39, 0x86, 0x0b, 0x8f, 0xe5, 0x18, 0x6e,
+	0x3c, 0x96, 0x63, 0x88, 0x72, 0x48, 0xcf, 0x2c, 0xc9, 0x28, 0x4d, 0xd2, 0x4b, 0xce, 0xcf, 0xd5,
+	0x47, 0xb6, 0x4a, 0x17, 0x66, 0x97, 0x3e, 0x72, 0xda, 0xab, 0x40, 0xe1, 0x95, 0x54, 0x16, 0xa4,
+	0x16, 0x27, 0xb1, 0x81, 0x53, 0xa3, 0x31, 0x20, 0x00, 0x00, 0xff, 0xff, 0x64, 0x13, 0x3d, 0x09,
+	0xa5, 0x02, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -162,6 +264,7 @@ const _ = grpc.SupportPackageIsVersion4
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type MsgClient interface {
 	BuyName(ctx context.Context, in *MsgBuyName, opts ...grpc.CallOption) (*MsgBuyNameResponse, error)
+	SetNameValue(ctx context.Context, in *MsgSetNameValue, opts ...grpc.CallOption) (*MsgSetNameValueResponse, error)
 }
 
 type msgClient struct {
@@ -181,9 +284,19 @@ func (c *msgClient) BuyName(ctx context.Context, in *MsgBuyName, opts ...grpc.Ca
 	return out, nil
 }
 
+func (c *msgClient) SetNameValue(ctx context.Context, in *MsgSetNameValue, opts ...grpc.CallOption) (*MsgSetNameValueResponse, error) {
+	out := new(MsgSetNameValueResponse)
+	err := c.cc.Invoke(ctx, "/mohammadrezatorkaman.nameservice.nameservice.Msg/SetNameValue", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 type MsgServer interface {
 	BuyName(context.Context, *MsgBuyName) (*MsgBuyNameResponse, error)
+	SetNameValue(context.Context, *MsgSetNameValue) (*MsgSetNameValueResponse, error)
 }
 
 // UnimplementedMsgServer can be embedded to have forward compatible implementations.
@@ -192,6 +305,9 @@ type UnimplementedMsgServer struct {
 
 func (*UnimplementedMsgServer) BuyName(ctx context.Context, req *MsgBuyName) (*MsgBuyNameResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BuyName not implemented")
+}
+func (*UnimplementedMsgServer) SetNameValue(ctx context.Context, req *MsgSetNameValue) (*MsgSetNameValueResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetNameValue not implemented")
 }
 
 func RegisterMsgServer(s grpc1.Server, srv MsgServer) {
@@ -216,6 +332,24 @@ func _Msg_BuyName_Handler(srv interface{}, ctx context.Context, dec func(interfa
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_SetNameValue_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgSetNameValue)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).SetNameValue(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/mohammadrezatorkaman.nameservice.nameservice.Msg/SetNameValue",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).SetNameValue(ctx, req.(*MsgSetNameValue))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Msg_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "mohammadrezatorkaman.nameservice.nameservice.Msg",
 	HandlerType: (*MsgServer)(nil),
@@ -223,6 +357,10 @@ var _Msg_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "BuyName",
 			Handler:    _Msg_BuyName_Handler,
+		},
+		{
+			MethodName: "SetNameValue",
+			Handler:    _Msg_SetNameValue_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -296,6 +434,73 @@ func (m *MsgBuyNameResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+func (m *MsgSetNameValue) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgSetNameValue) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgSetNameValue) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Value) > 0 {
+		i -= len(m.Value)
+		copy(dAtA[i:], m.Value)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Value)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.Name) > 0 {
+		i -= len(m.Name)
+		copy(dAtA[i:], m.Name)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Name)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgSetNameValueResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgSetNameValueResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgSetNameValueResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintTx(dAtA []byte, offset int, v uint64) int {
 	offset -= sovTx(v)
 	base := offset
@@ -329,6 +534,36 @@ func (m *MsgBuyName) Size() (n int) {
 }
 
 func (m *MsgBuyNameResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgSetNameValue) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Name)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Value)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	return n
+}
+
+func (m *MsgSetNameValueResponse) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -516,6 +751,202 @@ func (m *MsgBuyNameResponse) Unmarshal(dAtA []byte) error {
 		}
 		if fieldNum <= 0 {
 			return fmt.Errorf("proto: MsgBuyNameResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgSetNameValue) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgSetNameValue: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgSetNameValue: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Name = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Value", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Value = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgSetNameValueResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgSetNameValueResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgSetNameValueResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		default:

@@ -5,27 +5,27 @@ import (
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 )
 
-const TypeMsgBuyName = "buy_name"
+const TypeMsgSetNameValue = "set_name_value"
 
-var _ sdk.Msg = &MsgBuyName{}
+var _ sdk.Msg = &MsgSetNameValue{}
 
-func NewMsgBuyName(creator string, name string, bid string) *MsgBuyName {
-	return &MsgBuyName{
+func NewMsgSetNameValue(creator string, name string, value string) *MsgSetNameValue {
+	return &MsgSetNameValue{
 		Creator: creator,
 		Name:    name,
-		Bid:     bid,
+		Value:   value,
 	}
 }
 
-func (msg *MsgBuyName) Route() string {
+func (msg *MsgSetNameValue) Route() string {
 	return RouterKey
 }
 
-func (msg *MsgBuyName) Type() string {
-	return TypeMsgBuyName
+func (msg *MsgSetNameValue) Type() string {
+	return TypeMsgSetNameValue
 }
 
-func (msg *MsgBuyName) GetSigners() []sdk.AccAddress {
+func (msg *MsgSetNameValue) GetSigners() []sdk.AccAddress {
 	creator, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
 		panic(err)
@@ -33,16 +33,15 @@ func (msg *MsgBuyName) GetSigners() []sdk.AccAddress {
 	return []sdk.AccAddress{creator}
 }
 
-func (msg *MsgBuyName) GetSignBytes() []byte {
+func (msg *MsgSetNameValue) GetSignBytes() []byte {
 	bz := ModuleCdc.MustMarshalJSON(msg)
 	return sdk.MustSortJSON(bz)
 }
 
-func (msg *MsgBuyName) ValidateBasic() error {
+func (msg *MsgSetNameValue) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.Creator)
 	if err != nil {
 		return sdkerrors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid creator address (%s)", err)
 	}
-
 	return nil
 }

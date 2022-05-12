@@ -11,6 +11,8 @@
 
 export type NameserviceMsgBuyNameResponse = object;
 
+export type NameserviceMsgSetNameValueResponse = object;
+
 /**
  * Params defines the parameters for the module.
  */
